@@ -50,6 +50,11 @@ func checkError(e error) {
 }
 
 func main() {
+	if len(os.Args) < 2 {
+		fmt.Println("usage: process_mailbox source [target=source.json]")
+		os.Exit(0)
+	}
+
 	source := os.Args[1]
 	target := source + ".json"
 
